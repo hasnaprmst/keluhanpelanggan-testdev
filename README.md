@@ -21,7 +21,7 @@ Proyek ini menggunakan framework [Laravel 9](https://laravel.com/docs/9.x/deploy
 
 ### **2. Clone Repository**
 
-#### **- via Command Line atau Terminal (Linux)**
+#### **- via Git Bash (Windows) atau Terminal (Linux)**
 - Clone melalui dafar repository anda (https://github.com/**yourusername**/keluhanpelanggan-testdev.git
   ```
   git clone https://github.com/yourusername/keluhanpelanggan-testdev.git
@@ -42,10 +42,23 @@ Proyek ini menggunakan framework [Laravel 9](https://laravel.com/docs/9.x/deploy
   git add .
   git commit -a -m "Commit source code tes"
   git push -u origin master
+  
+  Username for 'https://github.com':
+  Password for 'https://your-username@github.com':
+
+  Catatan: masukkan access token yang digenerate sebagai pengganti password:
   ```
 
-### **4. Pull Request ke Repository (eskalink-id/keluhanpelanggan-testdev)**
+  atau ketika muncul pop up seperti pada gambar berikut ini, pilih token lalu lakukan copy lalu paste token github anda:
 
+  ![image](https://user-images.githubusercontent.com/116535942/197950844-9ce4ac36-dc9e-4ab9-bbd0-1844c5fa99f2.png)
+
+
+#
+
+***Lakukan langkah ke 4 berikut ini, setelah anda menyelesaikan soal tes***
+### **4. Pull Request ke Repository (eskalink-id/keluhanpelanggan-testdev)**
+Buka browser kemudian pilih repository **keluhanpelanggan-testdev** yang tadi anda Fork 
 1. Klik tab **Pull Request** dilayar github anda
 2. Tekan tombol **New Pull Request**
 2. **Pilih branch sesuai nomor Tes, lihat pada gambar berikut:**
@@ -137,4 +150,3 @@ Proyek ini menggunakan framework [Laravel 9](https://laravel.com/docs/9.x/deploy
 **Selamat mengerjakan, semoga sukses**
 
 #### **Jangan lupa melakukan pull request ke repository eskalink-id/keluhanpelanggan-testdev**
-

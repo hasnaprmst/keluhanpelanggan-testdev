@@ -31,6 +31,12 @@ class KeluhanPelangganController extends Controller
 
         $keluhan = KeluhanPelanggan::create($validatedData);
 
+        // Simpan ke tabel keluhan_status_his
+        $keluhanStatusHis = new KeluhanStatusHis();
+        $keluhanStatusHis->keluhan_id = $keluhan->id;
+        $keluhanStatusHis->status_keluhan = $validatedData['status_keluhan'];
+        $keluhanStatusHis->save();
+
         return response()->json($keluhan, 201);
     }
 

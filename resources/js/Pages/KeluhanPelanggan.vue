@@ -166,13 +166,13 @@
 									</li>
 									<li
 										class="page-item"
-										v-for="page in totalPages"
+										v-for="page in totalPagesHistory"
 										:key="page"
 										:class="{ active: currentPage === page }"
 									>
 										<a class="page-link" @click="changePage(page)">{{ page }}</a>
 									</li>
-									<li class="page-item" :class="{ disabled: currentPage === totalPages }">
+									<li class="page-item" :class="{ disabled: currentPage === totalPagesHistory }">
 										<a class="page-link" @click="changePage(currentPage + 1)">Next</a>
 									</li>
 								</ul>
@@ -318,11 +318,14 @@
 		},
 		computed: {
 			totalPages() {
-				return Math.ceil(this.keluhan.length / 10);
+				return Math.ceil(this.keluhan.length / this.itemsPerPage);
 			},
 			paginatedKeluhan() {
 				const start = (this.currentPage - 1) * this.itemsPerPage;
 				return this.keluhan.slice(start, start + this.itemsPerPage);
+			},
+			totalPagesHistory() {
+				return Math.ceil(this.history.length / this.itemsPerPage);
 			},
 			paginatedHistory() {
 				const start = (this.currentPage - 1) * this.itemsPerPage;
@@ -331,6 +334,7 @@
 		},
 		mounted() {
 			this.fetchKeluhan();
+			this.fetchHistory();
 		},
 		methods: {
 			showKeluhan() {
@@ -363,8 +367,20 @@
 					});
 			},
 			changePage(page) {
-				if (page < 1 || page > this.totalPages) {
-					return;
+				if (this.view === 'keluhan') {
+					if (page < 1) {
+						page = 1;
+					} else if (page > this.totalPages) {
+						page = this.totalPages;
+					}
+					this.currentPage = page;
+				} else {
+					if (page < 1) {
+						page = 1;
+					} else if (page > this.totalPagesHistory) {
+						page = this.totalPagesHistory;
+					}
+					this.currentPage = page;
 				}
 				this.currentPage = page;
 			},

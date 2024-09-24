@@ -132,10 +132,10 @@
 		overflow-x: auto; 
 	}
 	.table td, .table th {
-		white-space: nowrap; /* Prevents breaking line inside the cells */
-		overflow: hidden; /* Hides overflow text */
-		text-overflow: ellipsis; /* Adds ellipsis for overflow text */
-		max-width: 25ch; /* Limits the width to 25 characters */
+		white-space: nowrap; 
+		overflow: hidden; 
+		text-overflow: ellipsis; 
+		max-width: 25ch; 
 	}
 
 	.text-truncate {

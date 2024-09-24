@@ -178,7 +178,6 @@ class KeluhanPelangganController extends Controller
 
         $keluhan->update($validatedData);
 
-        // Simpan ke tabel keluhan_status_his
         $keluhanStatusHis = new KeluhanStatusHis();
         $keluhanStatusHis->keluhan_id = $keluhan->id;
         $keluhanStatusHis->status_keluhan = $validatedData['status_keluhan'];

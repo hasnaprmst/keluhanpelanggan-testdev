@@ -11,13 +11,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // umur keluhan = datetime sekarang - datetime keluhan
         $top10Keluhan = KeluhanPelanggan::select('id', 'nama', 'email', 'nomor_hp', 'status_keluhan', 'keluhan', 'created_at')
             ->orderBy('created_at', 'asc')
             ->limit(10)
             ->get()
             ->map(function ($keluhan) {
-                // Menghitung umur keluhan (selisih antara sekarang dan waktu keluhan dibuat)
                 $keluhan->umur_keluhan = now()->diffInDays($keluhan->created_at);
                 return $keluhan;
             });

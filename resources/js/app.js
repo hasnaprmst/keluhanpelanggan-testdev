@@ -4,7 +4,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './bootstrap';
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.js';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 import { createApp } from 'vue';
 
 import { createRouter, createWebHistory } from 'vue-router'

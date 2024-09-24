@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KeluhanPelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ Auth::routes();
 Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])
     ->where('any', '.*')
     ->name('home');
+
+Route::get('/keluhan-pelanggan/export/txt', [KeluhanPelangganController::class, 'exportTxt']);
+Route::get('/keluhan-pelanggan/export/csv', [KeluhanPelangganController::class, 'exportCsv']);
+Route::get('/keluhan-pelanggan/export/xls', [KeluhanPelangganController::class, 'exportXls']);
+Route::get('/keluhan-pelanggan/export/pdf', [KeluhanPelangganController::class, 'exportPdf']);

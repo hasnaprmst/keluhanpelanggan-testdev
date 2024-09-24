@@ -10,8 +10,18 @@ export const routes = [
         component: () => import(/* webpackChunkName: "home" */ './Pages/Home.vue')
     },
     {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import(/* webpackChunkName: "dashboard" */ './Pages/Dashboard.vue')
+    },
+    {
         path: '/keluhan-pelanggan',
         name: 'keluhan_pelanggan',
         component: () => import(/* webpackChunkName: "keluhan_pelanggan" */ './Pages/KeluhanPelanggan.vue')
+    },
+    {
+        path: '/export-keluhan-pelanggan',
+        name: 'export-keluhan-pelanggan',
+        component: () => import(/* webpackChunkName: "export" */ './Pages/Export.vue')
     },
 ];
